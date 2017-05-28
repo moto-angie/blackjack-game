@@ -16,7 +16,7 @@ if game.player_score == 21
 end
 
 user_input = nil
-while game.player_score < 22
+while game.player_score < 21
   print "\nHit or stand (H/S): "
   user_input = gets.chomp.capitalize
 
@@ -45,6 +45,10 @@ if game.player_score < 21
   puts "Dealer was dealt #{game.dealer_hand[1]}"
   puts "Dealer score: #{game.dealer_score}"
 
+  if game.dealer_score == 21
+    puts "Dealer wins!"
+  end
+
   while game.player_score < 22 && game.dealer_score < 17
     game.dealer_hit
     puts "Dealer was dealt #{game.dealer_hand[-1]}"
@@ -57,7 +61,7 @@ if game.player_score < 21
 end
 
 if game.player_score == game.dealer_score
-  puts "\nIt's a tie!"
+  puts "\nIt's a push!"
 end
 
 if game.player_score < 21 && game.dealer_score < 21

@@ -1,5 +1,3 @@
-#Hand to represent the player's and dealer's hand. This class will need to determine the best score based on the cards that have been dealt
-
 require_relative 'deck'
 
 class Hand
